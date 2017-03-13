@@ -1,0 +1,5 @@
+<h3><%= @project.title %></h3>
+<p><%= @project.description%></p>
+Owner: <%= @project.owner.email%>
+<%= link_to 'view issues', project_issues_path(@project)%>
+<%= link_to 'back to projects list', projects_path%>

@@ -1,0 +1,8 @@
+<h1><%= @project.title%></h1>
+<p>Find issues in the project</p>
+<% @issues.each do |issue|%>
+	<%= link_to issue.title, project_issue_path(@project, issue)%>
+	<%= issue.reporter.email%>
+	<%= issue.assignee.email%>
+<% end%>
+<%= link_to 'back to project', project_path(@project)%>

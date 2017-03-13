@@ -1,5 +1,5 @@
 <% @projects.each do |project|%>
-	<h3>Project: <%= project.title%></h3>
+	<h3>Project: <%= link_to project.title, project_path(project)%></h3>
 	<h3>Owner: <%= project.owner.email%></h3>
-	Members: <%= project.users.collect(&:email)%>
+	Members: <%= project.members.collect(&:email)%>
 <% end%>
