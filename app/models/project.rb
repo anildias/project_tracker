@@ -1,4 +1,7 @@
 class Project < ApplicationRecord
-	has_and_belongs_to_many :users
+	has_many :projects_users
+	has_many :users, through: :projects_users
+	has_many :members, through: :projects_users, source: :user
+
 	belongs_to :owner, class_name: 'User', foreign_key: 'user_id'
 end
