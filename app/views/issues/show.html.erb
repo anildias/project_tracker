@@ -1,0 +1,5 @@
+<h3><%= @issue.title %></h3>
+<p><%= @issue.description%></p>
+Reporter: <%= @issue.reporter.email%>
+Assignee: <%= @issue.assignee.email%>
+<%= link_to 'back to issues', project_issues_path(@issue.project)%>

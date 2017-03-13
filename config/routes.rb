@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   root to: "dashboard#index"
   devise_for :users, controllers: { sessions: 'sessions' }
 
-  resources :projects
+  resources :projects do
+  	resources :issues
+  end
 end
