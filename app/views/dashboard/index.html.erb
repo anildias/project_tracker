@@ -1,3 +1,199 @@
-<h1>Dashboard#index</h1>
-<p>Find me in app/views/dashboard/index.html.erb</p>
-<%= link_to 'Sign out', destroy_user_session_path, method: :delete%>
+  <section id="container" class="">
+     
+      
+      <header class="header dark-bg">
+            <div class="toggle-nav">
+                <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
+            </div>
+
+            <!--logo start-->
+            <a href="index.html" class="logo">Project <span class="lite">Tracker</span></a>
+            <!--logo end-->
+
+            <div class="nav search-row" id="top_menu">
+        			<!--  -->
+              <ul class="nav top-menu">                    
+                <li>
+                	<a href="#"><i class="icon_profile"></i> Projects</a>
+                </li>
+                <li>
+                	<a href="#"><i class="icon_profile"></i> Issues</a>
+                </li>
+                <li>
+                	<a class="btn btn-primary btn-lg btn-block" href="#createModal" data-toggle="modal">Create</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="top-nav notification-row">                
+                <!-- notificatoin dropdown start-->
+                <ul class="nav pull-right top-menu">
+                    
+                    <!-- task notificatoin start -->
+                    
+                    <!-- task notificatoin end -->
+
+                    <!-- inbox notificatoin start-->
+                    
+                    <!-- inbox notificatoin end -->
+
+                    <!-- alert notification start-->
+                   
+                    <!-- alert notification end-->
+
+                    <!-- user login dropdown start-->
+
+                    <div class="nav search-row" id="top_menu">
+                			<!--  search form start -->
+			                <ul class="nav top-menu">                    
+			                    <li>
+			                        <form class="navbar-form">
+			                            <input class="form-control" placeholder="Search" type="text">
+			                        </form>
+			                    </li>                    
+			                </ul>
+			                <!--  search form end -->                
+			            	</div>
+
+
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="profile-ava">
+                                <img alt="" src="">
+                            </span>
+                            <span class="username"><%= current_user.email%></span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu extended logout">
+                            <div class="log-arrow-up"></div>
+                            <li class="eborder-top">
+                                <a href="#"><i class="icon_profile"></i> My Profile</a>
+                            </li>
+                            <li>
+                                <a href="/users/sign_out" data-method="delete"><i class="icon_key_alt"></i> Log Out</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- user login dropdown end -->
+                </ul>
+                <!-- notificatoin dropdown end-->
+            </div>
+      </header>      
+      <!--header end-->
+
+      <!--sidebar start-->
+      <aside>
+          <div id="sidebar"  class="nav-collapse ">
+              <!-- sidebar menu start-->
+              <ul class="sidebar-menu">                
+                  <li class="active">
+                      <a class="" href="index.html">
+                          <i class="icon_house_alt"></i>
+                          <span>Dashboard</span>
+                      </a>
+                  </li>
+				  <li class="sub-menu">
+                      <a href="javascript:;" class="">
+                          <i class="icon_document_alt"></i>
+                          <span>Forms</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+                      <ul class="sub">
+                          <li><a class="" href="form_component.html">Form Elements</a></li>                          
+                          <li><a class="" href="form_validation.html">Form Validation</a></li>
+                      </ul>
+                  </li>       
+                  <li class="sub-menu">
+                      <a href="javascript:;" class="">
+                          <i class="icon_desktop"></i>
+                          <span>UI Fitures</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+                      <ul class="sub">
+                          <li><a class="" href="general.html">Elements</a></li>
+                          <li><a class="" href="buttons.html">Buttons</a></li>
+                          <li><a class="" href="grids.html">Grids</a></li>
+                      </ul>
+                  </li>
+                  <li>
+                      <a class="" href="widgets.html">
+                          <i class="icon_genius"></i>
+                          <span>Widgets</span>
+                      </a>
+                  </li>
+                  <li>                     
+                      <a class="" href="chart-chartjs.html">
+                          <i class="icon_piechart"></i>
+                          <span>Charts</span>
+                          
+                      </a>
+                                         
+                  </li>
+                             
+                  <li class="sub-menu">
+                      <a href="javascript:;" class="">
+                          <i class="icon_table"></i>
+                          <span>Tables</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+                      <ul class="sub">
+                          <li><a class="" href="basic_table.html">Basic Table</a></li>
+                      </ul>
+                  </li>
+                  
+                  <li class="sub-menu">
+                      <a href="javascript:;" class="">
+                          <i class="icon_documents_alt"></i>
+                          <span>Pages</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+                      <ul class="sub">                          
+                          <li><a class="" href="profile.html">Profile</a></li>
+                          <li><a class="" href="login.html"><span>Login Page</span></a></li>
+                          <li><a class="" href="blank.html">Blank Page</a></li>
+                          <li><a class="" href="404.html">404 Error</a></li>
+                      </ul>
+                  </li>
+                  
+              </ul>
+              <!-- sidebar menu end-->
+          </div>
+      </aside>
+      <!--sidebar end-->
+
+      <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="createModal" class="modal fade">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+              <h4 class="modal-title">Create Issue</h4>
+            </div>
+            <div class="modal-body">
+              <form role="form">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputFile">File input</label>
+                    <input type="file" id="exampleInputFile3">
+                    <p class="help-block">Example block-level help text here.</p>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> Check me out
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      </section>
+      <!--main content end-->
+  </section>

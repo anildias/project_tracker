@@ -3,5 +3,9 @@ class SessionsController < Devise::SessionsController
   # def new
   #   super
   # end
+
+  def new
+  	super
+  end
   
 end

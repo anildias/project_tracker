@@ -49,6 +49,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 
   gem 'devise'
+  gem 'bootstrap', '~> 4.0.0.alpha6'
+  gem 'rails-assets-tether'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
